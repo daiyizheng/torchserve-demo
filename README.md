@@ -77,14 +77,14 @@ For examples of how to configure a model for a use case and what the input forma
 ### Create model archive eager mode
 
 ```
-torch-model-archiver --model-name BERTSeqClassification --version 1.0 --serialized-file Transformer_model/pytorch_model.bin --handler ./Transformer_handler_generalized.py --extra-files "Transformer_model/config.json,./setup_config.json,./Seq_classification_artifacts/index_to_name.json"
+/usr/local/python3/bin/torch-model-archiver --model-name BERTSeqClassification --version 1.0 --serialized-file ./Transformer_model_torchscript/pytorch_model.bin --handler ./Transformer_model_torchscript/Transformer_handler_generalized.py --extra-files "./Transformer_model_torchscript/config.json,./Transformer_model_torchscript/setup_config.json,./Transformer_model_torchscript/index_to_name.json"
 
 ```
 
 ### Create model archive Torchscript mode
 
 ```
-torch-model-archiver --model-name BERTSeqClassification --version 1.0 --serialized-file Transformer_model/traced_model.pt --handler ./Transformer_handler_generalized.py --extra-files "./setup_config.json,./Seq_classification_artifacts/index_to_name.json"
+/usr/local/python3/bin/torch-model-archiver --model-name BERTSeqClassification --version 1.0 --serialized-file ./Transformer_model_torchscript/traced_model.pt --handler ./Transformer_model_torchscript/Transformer_handler_generalized.py --extra-files "./Transformer_model_torchscript/setup_config.json,./Transformer_model_torchscript/index_to_name.json"
 
 ```
 
@@ -163,7 +163,7 @@ Change `setup_config.json` to
  "embedding_name": "distilbert"
 }
 ```
-
+docker run -itd -p 10022:22 -p 8080:8080 -p 8081:8081 --name centos  repu/torchserve:v1.0.0
 ```
 rm -r Transformer_model
 python Download_Transformer_models.py
@@ -198,9 +198,9 @@ For batch inference the main difference is that you need set the batch size whil
     ```
     mkdir model_store
     mv BERTSeqClassification.mar model_store/
-    torchserve --start --model-store model_store --ncs
+    /usr/local/python3/bin/torchserve --start --model-store model_store --ncs
 
-    curl -X POST "localhost:8081/models?model_name=BERTSeqClassification&url=BERTSeqClassification.mar&batch_size=4&max_batch_delay=5000&initial_workers=3&synchronous=true"
+    curl -X POST "localhost:8081/models?model_name=my_tc&url=BERTSeqClassification.mar&batch_size=4&max_batch_delay=5000&initial_workers=3&synchronous=true"
     ```
 
 * Config.properties
@@ -225,7 +225,7 @@ For batch inference the main difference is that you need set the batch size whil
     mv BERTSeqClassification.mar model_store/
     torchserve --start --model-store model_store --ts-config config.properties --models BERTSeqClassification= BERTSeqClassification.mar
 
-    ```   
+     ```
 Now to run the batch inference following command can be used:
 
 ```
