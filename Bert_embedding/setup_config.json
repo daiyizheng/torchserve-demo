@@ -1,0 +1,9 @@
+{
+ "model_name":"bert-base-chinese",
+ "do_lower_case":true,
+ "save_mode":"torchscript",
+ "max_length":"50",
+ "columns": "text",
+ "batch_size": "32",
+ "is_gpu": false
+}
