@@ -144,10 +144,10 @@ class BERTHandler(BaseHandler, ABC):
                           'attention_mask': batch[1]}
                 outputs = self.model(**inputs)  # (sequence_output, pooler_output)
                 if inferences is None:
-                    inferences = outputs[1].detach().cpu().numpy().tolist()
+                    inferences = outputs[1].detach().cpu().numpy()
                 else:
-                    inferences = np.append(inferences, outputs[1].detach().cpu().numpy().tolist(), axis=0)
-        return inferences
+                    inferences = np.append(inferences, outputs[1].detach().cpu().numpy(), axis=0)
+        return inferences.tolist()
 
 
     def postprocess(self, inference_output):
