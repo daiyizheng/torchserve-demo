@@ -13,7 +13,7 @@ docker run -dit  -p 8880:8080 -p 8081:8081 --name bert  repu/torchserve:v1.0.0
 import requests
 import json
 def tester():
-    server_url = 'http://10.0.30.2:8880/predictions/bertEmbbeding'
+    server_url = 'http://xxxx:8880/predictions/bertEmbbeding'
 
     payload = {
         "text":["做基因检测采集什么样本检测结果最准确"],
