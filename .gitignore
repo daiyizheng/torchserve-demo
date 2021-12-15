@@ -1,3 +1,8 @@
 **/*.pt
 .idea/*
 .gitignore
+/tensorflowServer/chinese_L-12_H-768_A-12/bert_config.json
+/tensorflowServer/chinese_L-12_H-768_A-12/bert_model.ckpt.data-00000-of-00001
+/tensorflowServer/chinese_L-12_H-768_A-12/bert_model.ckpt.index
+/tensorflowServer/chinese_L-12_H-768_A-12/bert_model.ckpt.meta
+/tensorflowServer/chinese_L-12_H-768_A-12/vocab.txt

@@ -3,5 +3,13 @@
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
   </component>
+  <component name="ProjectPlainTextFileTypeManager">
+    <file url="file://$PROJECT_DIR$/requirements/torch_cu101_windows.txt" />
+    <file url="file://$PROJECT_DIR$/requirements/torch_cu102_windows.txt" />
+    <file url="file://$PROJECT_DIR$/requirements/torch_cu111_windows.txt" />
+    <file url="file://$PROJECT_DIR$/requirements/torch_cu113_windows.txt" />
+    <file url="file://$PROJECT_DIR$/requirements/torch_darwin.txt" />
+    <file url="file://$PROJECT_DIR$/requirements/torch_windows.txt" />
+  </component>
   <component name="ProjectRootManager" version="2" project-jdk-name="Remote Python 3.7.5 (sftp://dyz@10.0.30.2:22/mnt/home/dyz/anaconda3/envs/ts/bin/python)" project-jdk-type="Python SDK" />
 </project>
