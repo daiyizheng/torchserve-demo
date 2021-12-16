@@ -8,3 +8,4 @@
 /tensorflowServer/chinese_L-12_H-768_A-12/vocab.txt
 **/text-classify.onnx
 **/embeddings.onnx
+test/*
