@@ -6,3 +6,5 @@
 /tensorflowServer/chinese_L-12_H-768_A-12/bert_model.ckpt.index
 /tensorflowServer/chinese_L-12_H-768_A-12/bert_model.ckpt.meta
 /tensorflowServer/chinese_L-12_H-768_A-12/vocab.txt
+**/text-classify.onnx
+**/embeddings.onnx

@@ -9,6 +9,7 @@
 文件说明：
     
 """
+
 import onnxruntime as ort
 import numpy as np
 sess = ort.InferenceSession('./onnx/model.onnx',None)
