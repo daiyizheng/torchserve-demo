@@ -20,7 +20,6 @@ jar {
     archiveBaseName = "onnxJava"
     manifest {
         attributes(
-                'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
                 'Main-Class': 'com.dyz.onnx.OnnxDemo'
         )
     }
